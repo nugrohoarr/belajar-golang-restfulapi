@@ -1,0 +1,93 @@
+{
+    "openapi":"3.0.2",
+    "info": {
+      "title":"Category RESTful API",
+      "description": "Belajar Restfull APi Golang",
+      "version":"1.0"
+    },
+    "servers": [
+      {"url":"http://localhost:3000/api"}
+    ],
+    "paths": {
+        "/categories" : {
+            "get" : {
+                "tags": ["Category API"],
+                "description": "list all categories",
+                "summary": "Get List All categories",
+                "responses": {
+                    "200" : {
+                        "description": "Success get all categories",
+                        "content": {
+                            "aplication/json" : {
+                                "schema": {
+                                    "type" : "object",
+                                    "properties": {
+                                        "code" : {
+                                            "type": "number"
+                                        },
+                                        "status" : {
+                                            "type": "string"
+                                        },
+                                        "data" : {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id" : {
+                                                        "type": "number"
+                                                    },
+                                                    "name" : {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post" : {
+                "tags": ["Category API"],
+                "description": "Create Category",
+                "summary": "Create new Category",
+                "requestBody": {
+                    "content": {
+                        "aplication/json" : {
+                            "schema":{
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    } 
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success Create Category",
+                        "content": {
+                            "aplication/json" : {
+                                "schema" : {
+                                    "type": "object",
+                                    "properties": {
+                                        "id" : {
+                                            "type": "number"
+                                        },
+                                        "name" : {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+  }

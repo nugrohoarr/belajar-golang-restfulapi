@@ -1,0 +1,31 @@
+## Get all categories
+GET http://localhost:8080/api/categories
+X-API-key: RAHASIA
+accept: aplicattion/json
+
+## Get categoies by id
+GET  http://localhost:8080/api/categories/2
+X-API-key: RAHASIA
+accept: application/json
+
+
+## Update categoies by id
+PUT  http://localhost:8080/api/categories/2
+X-API-key: RAHASIA
+accept: application/json
+{
+    "name" : "makan"
+}
+
+## Create categoies 
+POST  http://localhost:8080/api/categories/
+X-API-key: RAHASIA
+accept: application/json
+{
+    "name" : "makan"
+}
+
+## Delete categories by id
+DELETE http://localhost:8080/api/categories/2
+X-API-key: RAHASIA
+accept: application/json
